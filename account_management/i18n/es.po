@@ -1,0 +1,666 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* account_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.0.3\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2012-01-27 13:43+0000\n"
+"PO-Revision-Date: 2012-01-27 13:43+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_management
+#: selection:product.sorting,type:0
+msgid "Service"
+msgstr "Servicio"
+
+#. module: account_management
+#: field:product.category,unique_account:0
+#: field:product.sorting,unique_account:0
+#: field:product.template,unique_account:0
+msgid "Require Unique Account"
+msgstr "Requiere Unica Cuenta"
+
+#. module: account_management
+#: help:account.product,same_stock:0
+msgid "Selecting this field indicates that uses the same account as Stock-In"
+msgstr "Al seleccionar este campo indica que utiliza la misma cuenta como archivo Entrante"
+
+#. module: account_management
+#: constraint:res.partner:0
+msgid "Error ! The partner does not have an invoice address."
+msgstr "Error ! La empresa no tiene dirección fiscal definida."
+
+#. module: account_management
+#: help:product.category,property_account_allowance:0
+#: help:product.template,property_account_allowance:0
+msgid "This account will be used to book Allowances when making Customer Refunds."
+msgstr "Esta cuenta se utilizará para reservar derechos de emisión al hacer reembolsos a clientes."
+
+#. module: account_management
+#: field:product.sorting,progress:0
+msgid "Progress"
+msgstr "Progresos"
+
+#. module: account_management
+#: view:product.sorting:0
+msgid "Reorder"
+msgstr "Reordenar"
+
+#. module: account_management
+#: help:account.product,unique_return:0
+msgid "Selecting this field allow you to create Unique Accounts for Sale Returns"
+msgstr "Al seleccionar este campo le permiten crear cuentas únicas para las devoluciones en venta"
+
+#. module: account_management
+#: constraint:account.account:0
+msgid "Configuration Error! \n"
+"You cannot define children to an account with internal type different of \"View\"! "
+msgstr "¡Error de configuración!\n"
+"¡No puede definir hijos de una cuenta de tipo interno distinto al tipo \"Vista\"! "
+
+#. module: account_management
+#: field:res.partner.account,type:0
+msgid "Tipo"
+msgstr "Tipo"
+
+#. module: account_management
+#: view:product.category:0
+#: view:product.product:0
+#: view:product.template:0
+msgid "Accounting Classification"
+msgstr "Classificacion de Cuentas"
+
+#. module: account_management
+#: model:ir.model,name:account_management.model_product_sorting
+msgid "Product Sorting"
+msgstr "Ordenar Productos"
+
+#. module: account_management
+#: field:account.product,unique_return:0
+msgid "Return Unique Account"
+msgstr "Unica Cuenta de Retorno"
+
+#. module: account_management
+#: field:account.product,allowance:0
+#: field:account.product,expense:0
+#: field:account.product,income:0
+#: field:account.product,price_diff:0
+#: field:account.product,return:0
+#: field:account.product,stock_in:0
+#: field:account.product,stock_out:0
+#: field:res.partner.account,property_account_partner:0
+msgid "Cuenta Anfitriona"
+msgstr "Cuenta Anfitriona"
+
+#. module: account_management
+#: selection:product.sorting,type:0
+msgid "Consumable"
+msgstr "Consumible"
+
+#. module: account_management
+#: field:account.product,unique_expense:0
+msgid "Expense Unique Account"
+msgstr "Unica Cuenta de Gastos"
+
+#. module: account_management
+#: model:ir.model,name:account_management.model_account_account
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: account_management
+#: field:res.partner.account,level:0
+msgid "Level"
+msgstr "Nivel"
+
+#. module: account_management
+#: view:product.sorting:0
+#: field:product.sorting,product_ids:0
+msgid "Products"
+msgstr "Productos"
+
+#. module: account_management
+#: view:account.product:0
+msgid "Account Out-Product Inventory"
+msgstr "Cuenta de Producto fuera de inventario"
+
+#. module: account_management
+#: selection:res.partner.account,type:0
+msgid "Cuenta x Cobrar"
+msgstr "Cuenta x Cobrar"
+
+#. module: account_management
+#: code:addons/account_management/wizard/product_reorder.py:39
+#: code:addons/account_management/wizard/product_reorder.py:47
+#, python-format
+msgid "UserError"
+msgstr "Error de Usuario"
+
+#. module: account_management
+#: view:res.company:0
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: account_management
+#: constraint:account.account:0
+msgid "Error ! You can not create recursive accounts."
+msgstr "¡Error! No se pueden crear cuentas recursivas."
+
+#. module: account_management
+#: constraint:product.category:0
+msgid "Error ! You can not create recursive categories."
+msgstr "¡Error! No puede crear categorías recursivas."
+
+#. module: account_management
+#: view:account.product:0
+msgid "Account Dif-Products Price"
+msgstr "Cuenta de Precio diferencial de Productos"
+
+#. module: account_management
+#: view:account.account:0
+msgid "Auto Code?"
+msgstr "Auto Codigo?"
+
+#. module: account_management
+#: model:ir.model,name:account_management.model_res_partner
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: account_management
+#: model:ir.actions.act_window,name:account_management.action_partner_account_form_cxc
+#: model:ir.ui.menu,name:account_management.menu_partner_account_form_cxc
+msgid "Classification CxC Business Accounting"
+msgstr "Clasificacion CxC Cuenta de Negocio"
+
+#. module: account_management
+#: view:product.sorting:0
+msgid "Please Make this Customization by Batch of 20 - 30 items, Taking lots of items will no accelerated the process indeed it will slow it"
+msgstr "Por favor haga esta personalización por lotes de 20 a 30 puntos, seleccionar muchos items no acelerará el proceso, de hecho lo pondrá lento"
+
+#. module: account_management
+#: view:account.product:0
+msgid "Income and Expenditure Accounts"
+msgstr "Cuentas de Ingresos y Costos"
+
+#. module: account_management
+#: help:account.account,auto:0
+msgid " \n"
+"'Si esta seleccionado, debera indicar una cuenta padre o anfitriona,\n"
+" y al guardar el registro se autogenerara el codigo consecutivo \n"
+" de la cuenta contable huesped, evitando que vd. genere manualmente\n"
+" el codigo contable de la misma.'\n"
+""
+msgstr " \n"
+"'Si esta seleccionado, debera indicar una cuenta padre o anfitriona,\n"
+" y al guardar el registro se autogenerara el codigo consecutivo \n"
+" de la cuenta contable huesped, evitando que vd. genere manualmente\n"
+" el codigo contable de la misma.'\n"
+""
+
+#. module: account_management
+#: sql_constraint:account.account:0
+msgid "The code of the account must be unique per company !"
+msgstr "¡El código de la cuenta debe ser único por compañía!"
+
+#. module: account_management
+#: constraint:res.company:0
+msgid "Error! You can not create recursive companies."
+msgstr "¡Error! No puedes crear compañias recursivas."
+
+#. module: account_management
+#: model:ir.actions.act_window,name:account_management.crear_ctas_act
+#: model:ir.ui.menu,name:account_management.menu_crear_ctas_act
+msgid "Accounting Classification of Products"
+msgstr "Clasificacion de Cuentas de Productos"
+
+#. module: account_management
+#: help:res.partner,account_kind_rec:0
+msgid "Este Concepto le permite generar las CxC para\n"
+"la empresa de acuerdo a la cuenta contable\n"
+"del grupo en el cual se clasifica"
+msgstr "Este Concepto le permite generar las CxC para\n"
+"la empresa de acuerdo a la cuenta contable\n"
+"del grupo en el cual se clasifica"
+
+#. module: account_management
+#: field:product.sorting,acc_prod_id:0
+msgid "Accounting Category"
+msgstr "Accounting Category"
+
+#. module: account_management
+#: field:account.product,name:0
+#: field:res.partner.account,name:0
+msgid "Nombre"
+msgstr "Nombre"
+
+#. module: account_management
+#: field:account.product,unique_stock:0
+msgid "Stock Unique Account"
+msgstr "Unica Cuenta de Stock"
+
+#. module: account_management
+#: model:ir.model,name:account_management.model_product_category
+#: view:product.sorting:0
+msgid "Product Category"
+msgstr "Categoría de producto"
+
+#. module: account_management
+#: help:product.category,unique_account:0
+#: help:product.sorting,unique_account:0
+#: help:product.template,unique_account:0
+msgid "Selecting this field allow you to create Unique Accounts for this Record, Taking into Account the Accounting Classification, not doing so, Will asign those ones in the Product Category"
+msgstr "Al seleccionar este campo le permiten crear cuentas únicas para este registro, teniendo especialmente en cuenta la clasificación contable, que no lo hagan, se asignará a los que están en la categoría de producto"
+
+#. module: account_management
+#: help:account.product,unique_expense:0
+msgid "Selecting this field allow you to create Unique Accounts for Expenses"
+msgstr "Al seleccionar este campo le permiten crear cuentas únicas para los costos"
+
+#. module: account_management
+#: field:product.category,property_account_return:0
+#: field:product.template,property_account_return:0
+msgid "Sale Return Account"
+msgstr "Cuenta de Retorno de Venta"
+
+#. module: account_management
+#: field:res.partner,account_kind_pay:0
+msgid "Tipo de CxP"
+msgstr "Tipo de CxP"
+
+#. module: account_management
+#: field:product.sorting,type:0
+msgid "Product Type"
+msgstr "Tipo de Producto"
+
+#. module: account_management
+#: field:res.company,pattern:0
+msgid "Patron de Cuentas Contables"
+msgstr "Patron de Cuentas Contables"
+
+#. module: account_management
+#: field:res.partner.account,company_id:0
+msgid "Compañia"
+msgstr "Compañia"
+
+#. module: account_management
+#: field:account.product,u_type_allowance:0
+#: field:account.product,u_type_expense:0
+#: field:account.product,u_type_income:0
+#: field:account.product,u_type_price_diff:0
+#: field:account.product,u_type_return:0
+#: field:account.product,u_type_stock_in:0
+#: field:account.product,u_type_stock_out:0
+#: field:res.partner.account,user_type:0
+msgid "Tipo de Cuenta"
+msgstr "Tipo de Cuenta"
+
+#. module: account_management
+#: view:product.sorting:0
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: account_management
+#: view:account.product:0
+msgid "Create Product Accounts"
+msgstr "Crear Cuentas de Productos"
+
+#. module: account_management
+#: view:res.partner.account:0
+msgid "Accounting Company Accounts"
+msgstr "Cuentas Contables de la Compañia"
+
+#. module: account_management
+#: help:product.category,property_account_return:0
+#: help:product.template,property_account_return:0
+msgid "This account will be used to book Sale Returns when making Customer Refunds."
+msgstr "Esta cuenta se utilizará para hacer su reserva de Devoluciones en venta al hacer reembolsos a clientes."
+
+#. module: account_management
+#: field:account.account,auto:0
+msgid "AutoCodigo?"
+msgstr "AutoCodigo?"
+
+#. module: account_management
+#: code:addons/account_management/wizard/product_reorder.py:39
+#, python-format
+msgid "You must select products to reorder"
+msgstr "Debe seleccionar Productos para reordenar"
+
+#. module: account_management
+#: help:account.product,unique_diff:0
+msgid "Selecting this field allow you to create Unique Accounts for Prices Difference"
+msgstr "Al seleccionar este campo le permiten crear cuentas únicas por Diferencia de Precios"
+
+#. module: account_management
+#: model:ir.model,name:account_management.model_res_partner_account
+msgid "Partner Accounting Classification"
+msgstr "Clasificacion de Cuentas de Empresa"
+
+#. module: account_management
+#: field:account.product,same_stock:0
+msgid "Same as Stock-in Account"
+msgstr "Igual que la Cuenta de Stock-In"
+
+#. module: account_management
+#: field:res.partner.account,property_account_partner_default:0
+msgid "Cuenta Contable por Defecto"
+msgstr "Cuenta Contable por Defecto"
+
+#. module: account_management
+#: field:product.sorting,categ_id:0
+msgid "Category"
+msgstr "Categoria"
+
+#. module: account_management
+#: code:addons/account_management/wizard/product_reorder.py:47
+#, python-format
+msgid "The Category You have selected lacks of Accounting Category \n"
+" Solve the problem in the Category or Select an Accounting Category"
+msgstr "La categoría seleccionada no tiene la categoría de Contabilidad \n"
+" Resolver el problema en la categoría o seleccionar una categoría de Contabilidad"
+
+#. module: account_management
+#: view:res.company:0
+msgid "Pattern chart of accounts"
+msgstr "Modelo de Plan de Cuentas"
+
+#. module: account_management
+#: view:account.product:0
+msgid "Account In-Stock Products"
+msgstr "Cuenta  In-Stock Products"
+
+#. module: account_management
+#: field:product.sorting,sale_ok:0
+msgid "Can be sold"
+msgstr "Can be sold"
+
+#. module: account_management
+#: constraint:product.template:0
+msgid "Error: The default UOM and the purchase UOM must be in the same category."
+msgstr "Error: La UOM por defecto y la UOM de compra debe ser en la misma categoría."
+
+#. module: account_management
+#: view:account.product:0
+msgid "Sales Returns Account"
+msgstr "Sales Returns Account"
+
+#. module: account_management
+#: model:ir.actions.act_window,name:account_management.action_partner_account_form_cxp
+#: model:ir.ui.menu,name:account_management.menu_partner_account_form_cxp
+msgid "Classification CxP Business Accounting"
+msgstr "Classification CxP Business Accounting"
+
+#. module: account_management
+#: field:product.category,acc_prod_id:0
+msgid "Product Accounting Classification"
+msgstr "Product Accounting Classification"
+
+#. module: account_management
+#: field:product.category,property_account_allowance:0
+#: field:product.template,property_account_allowance:0
+msgid "Allowance Account"
+msgstr "Allowance Account"
+
+#. module: account_management
+#: help:res.partner,account_kind_pay:0
+msgid "Este Concepto le permite generar las CxP para\n"
+"la empresa de acuerdo a la cuenta contable\n"
+"del grupo en el cual se clasifica"
+msgstr "Este Concepto le permite generar las CxP para\n"
+"la empresa de acuerdo a la cuenta contable\n"
+"del grupo en el cual se clasifica"
+
+#. module: account_management
+#: field:account.product,unique_income:0
+msgid "Income Unique Account"
+msgstr "Income Unique Account"
+
+#. module: account_management
+#: view:account.product:0
+msgid "Account Sales Discounts"
+msgstr "Account Sales Discounts"
+
+#. module: account_management
+#: field:account.product,unique_diff:0
+msgid "Price Diff Unique Account"
+msgstr "Price Diff Unique Account"
+
+#. module: account_management
+#: code:addons/account_management/model/account_partner.py:96
+#, python-format
+msgid "Warning, Pattern has too few levels!!!"
+msgstr "Warning, Pattern has too few levels!!!"
+
+#. module: account_management
+#: model:ir.ui.menu,name:account_management.menu_contable_partner
+#: view:res.partner.account:0
+msgid "Company Accounting Classification"
+msgstr "Company Accounting Classification"
+
+#. module: account_management
+#: code:addons/account_management/model/account_product.py:792
+#, python-format
+msgid "El producto no puede ser borrado ya que esta siendo usado!"
+msgstr "El producto no puede ser borrado ya que esta siendo usado!"
+
+#. module: account_management
+#: code:addons/account_management/model/account_product.py:792
+#, python-format
+msgid "Error"
+msgstr "Error"
+
+#. module: account_management
+#: selection:product.sorting,type:0
+msgid "Stockable Product"
+msgstr "Stockable Product"
+
+#. module: account_management
+#: view:account.product:0
+msgid "Spending Account Products"
+msgstr "Spending Account Products"
+
+#. module: account_management
+#: view:account.product:0
+msgid "Revenue account of the products"
+msgstr "Revenue account of the products"
+
+#. module: account_management
+#: model:ir.model,name:account_management.model_res_company
+msgid "res.company"
+msgstr "res.company"
+
+#. module: account_management
+#: code:addons/account_management/model/account_partner.py:97
+#, python-format
+msgid "The company you are accessing has a Pattern with too few levels,\n"
+"You can not afford this feature"
+msgstr "The company you are accessing has a Pattern with too few levels,\n"
+"You can not afford this feature"
+
+#. module: account_management
+#: field:product.template,acc_prod_id:0
+msgid "Clasificacion Contable"
+msgstr "Clasificacion Contable"
+
+#. module: account_management
+#: help:product.sorting,type:0
+msgid "Will change the way procurements are processed. Consumables are stockable products with infinite stock, or for use when you have no stock management in the system."
+msgstr "Will change the way procurements are processed. Consumables are stockable products with infinite stock, or for use when you have no stock management in the system."
+
+#. module: account_management
+#: constraint:res.partner:0
+msgid "Error ! Partner's VAT must be a unique value"
+msgstr "Error ! El RIF de la empresa debe ser unico"
+
+#. module: account_management
+#: view:product.category:0
+msgid "Allowance And Sale Return Setting"
+msgstr "Allowance And Sale Return Setting"
+
+#. module: account_management
+#: model:ir.model,name:account_management.model_account_product
+msgid "Clasificacion Contable de los Productos"
+msgstr "Clasificacion Contable de los Productos"
+
+#. module: account_management
+#: help:res.partner.account,property_account_partner_default:0
+msgid "\n"
+"Esta cuenta se establecera como la cuenta con-\n"
+"table a usar en el caso de que la empresa no -\n"
+"realice operaciones como proveedor o como cliente,\n"
+"dependiendo del caso\n"
+" "
+msgstr "\n"
+"Esta cuenta se establecera como la cuenta con-\n"
+"table a usar en el caso de que la empresa no -\n"
+"realice operaciones como proveedor o como cliente,\n"
+"dependiendo del caso\n"
+" "
+
+#. module: account_management
+#: selection:res.partner.account,type:0
+msgid "Cuenta x Pagar"
+msgstr "Cuenta x Pagar"
+
+#. module: account_management
+#: field:account.product,company_id:0
+msgid "Compania"
+msgstr "Compania"
+
+#. module: account_management
+#: help:res.company,pattern:0
+msgid "\n"
+"Escriba el Patron de las cuentas, su estructura, por ejemplo:\n"
+"Clase:           1,\n"
+"Grupo:           122,\n"
+"Cuentas:         122333,\n"
+"Subcuentas:      122333444,\n"
+"Cuentas Aux.:    1223334445555\n"
+"Entonces escriba:  1, 122, 122333, 122333444, 122333444555\n"
+""
+msgstr "\n"
+"Escriba el Patron de las cuentas, su estructura, por ejemplo:\n"
+"Clase:           1,\n"
+"Grupo:           122,\n"
+"Cuentas:         122333,\n"
+"Subcuentas:      122333444,\n"
+"Cuentas Aux.:    1223334445555\n"
+"Entonces escriba:  1, 122, 122333, 122333444, 122333444555\n"
+""
+
+#. module: account_management
+#: model:ir.model,name:account_management.model_product_product
+msgid "Product"
+msgstr "Producto"
+
+#. module: account_management
+#: help:product.category,acc_prod_id:0
+msgid "This account will be used to value the output stock"
+msgstr "Esta cuenta se utiliza para valorar el inventario de salida"
+
+#. module: account_management
+#: field:res.partner,account_kind_rec:0
+msgid "Tipo de CxC"
+msgstr "Tipo de CxC"
+
+#. module: account_management
+#: field:product.sorting,override_unique:0
+msgid "Override Unique Account Requirement"
+msgstr "Anular Requisito de Cuenta Unica"
+
+#. module: account_management
+#: model:ir.actions.act_window,name:account_management.action_product_sorting
+#: model:ir.ui.menu,name:account_management.menu_product_sorting
+#: view:product.sorting:0
+msgid "Sorting Accounting Settings to Products"
+msgstr "Clasificacion de Ajustes Contables de los Productos"
+
+#. module: account_management
+#: help:res.partner.account,property_account_partner:0
+msgid "\n"
+"Esta cuenta se usará para establecer el padre\n"
+"de los partners que tengan como clasificacion\n"
+"este Grupo, en conjunto con la secuencia, de\n"
+"tal manera que si esta cuenta tiene una estruc-\n"
+"tura, 107003, entonces el partner, que tenga\n"
+"esta clasificacion, tendra una cuenta como la\n"
+"que sigue 1070030005, si el patron de cuentas\n"
+"en la compañía es:\n"
+"1, 122, 122333, 1223334444\n"
+"Es de notarse que la cuenta que aqui se sele-\n"
+"cciona debe ser del tipo del ultimo en el pa-\n"
+"tron, que para este ejemplo es:\n"
+"107003 y cuadra con lo establecido 122333\n"
+" "
+msgstr "\n"
+"Esta cuenta se usará para establecer el padre\n"
+"de los partners que tengan como clasificacion\n"
+"este Grupo, en conjunto con la secuencia, de\n"
+"tal manera que si esta cuenta tiene una estruc-\n"
+"tura, 107003, entonces el partner, que tenga\n"
+"esta clasificacion, tendra una cuenta como la\n"
+"que sigue 1070030005, si el patron de cuentas\n"
+"en la compañía es:\n"
+"1, 122, 122333, 1223334444\n"
+"Es de notarse que la cuenta que aqui se sele-\n"
+"cciona debe ser del tipo del ultimo en el pa-\n"
+"tron, que para este ejemplo es:\n"
+"107003 y cuadra con lo establecido 122333\n"
+" "
+
+#. module: account_management
+#: field:product.sorting,purchase_ok:0
+msgid "Can be Purchased"
+msgstr "Puede ser Comprado"
+
+#. module: account_management
+#: help:account.product,unique_allowance:0
+msgid "Selecting this field allow you to create Unique Accounts for Allowances"
+msgstr "Al seleccionar este campo le permiten crear cuentas únicas de derechos de emisión"
+
+#. module: account_management
+#: model:ir.model,name:account_management.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: account_management
+#: code:addons/account_management/model/account_company.py:264
+#, python-format
+msgid "The account [%s -%s] \n"
+"has reached the limit that can be accommodated\n"
+"in the ledger accounts: [%d accounts]"
+msgstr "La Cuenta [%s -%s] \n"
+"ha alcanzado el límite que pueden ser acomodados\n"
+"en el libro mayor de cuentas: [%d accounts]"
+
+#. module: account_management
+#: field:account.product,unique_allowance:0
+msgid "Allow. Unique Account"
+msgstr "unica Cuenta de Subsidio "
+
+#. module: account_management
+#: help:account.product,unique_income:0
+msgid "Selecting this field allow you to create Unique Accounts for Incomes"
+msgstr "Al seleccionar este campo le permiten crear cuentas únicas para los ingresos"
+
+#. module: account_management
+#: help:product.sorting,override_unique:0
+msgid "Selecting this field will allow you to override the Unique Account Requirement set in the Product Category for these Records"
+msgstr "Al seleccionar este campo le permiten anular el requisito de Cuenta Única puesto en la categoría de producto de estos registros"
+
+#. module: account_management
+#: help:account.product,unique_stock:0
+msgid "Selecting this field allow you to create Unique Accounts for Stocks"
+msgstr "Al seleccionar este campo le permiten crear cuentas únicas para los inventarios"
+
+#. module: account_management
+#: constraint:product.product:0
+msgid "Error: Invalid ean code"
+msgstr "Error: Código inválido ean"
+

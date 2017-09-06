@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+    <record id="product_sorting_view" model="ir.ui.view">
+        <field name="name">product_sorting_view</field>
+        <field name="model">product.sorting</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Sorting Accounting Settings to Products">
+                <separator string="Sorting Accounting Settings to Products" colspan="4"/>
+                <label colspan="4" nolabel="1" string="Please Make this Customization by Batch of 20 - 30 items, Taking lots of items will no accelerated the process indeed it will slow it"/>
+                <newline/>
+                <group colspan='4' col='2'>
+                    <separator string="Product Category" colspan="4"/>
+                    <field name="categ_id" nolabel='0' colspan='2'/>
+                    <field name="acc_prod_id" nolabel='0' colspan='2'/>
+                    <newline/>
+                    <separator string="Products" colspan="4"/>
+                    <field name="product_ids" nolabel='1' colspan='4' rowspan='20'/>
+                </group>
+                <group colspan="4" col="2">
+                     <field name='override_unique'/>
+                </group>
+                <group colspan="4" col="4">
+                     <field name='unique_account' attrs="{'readonly':[('override_unique','=',0)]}" colspan='2'/>
+                     <field name='purchase_ok' attrs="{'readonly':[('override_unique','=',0)]}" colspan='2'/>
+                     <field name='sale_ok' attrs="{'readonly':[('override_unique','=',0)]}" colspan='2'/>
+                     <field name='type' attrs="{'readonly':[('override_unique','=',0)]}" colspan='2'/>
+                 </group>
+                <group colspan="4">
+                    <field name="progress" widget="progressbar" nolabel="1" colspan="2"/>
+               </group>
+                <group colspan="2" col="4">
+                     <hpaned/>
+                     <hpaned/>
+                     <button special="cancel" string="Cancel" icon="gtk-cancel"/>
+                     <button name="reorder" string="Reorder" type="object" icon="gtk-ok"/>
+                 </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_product_sorting" model="ir.actions.act_window">
+        <field name="name">product_sorting_view</field>
+        <field name="res_model">product.sorting</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form,tree</field>
+        <field name="view_id" ref="product_sorting_view"/>
+        <field name="context">{'record_id':active_id}</field>
+        <field name="target">new</field>
+    </record>
+
+    <act_window name="Sorting Accounting Settings to Products"
+            res_model="product.sorting"
+            src_model="product.product"
+            view_mode="form"
+            target="new"
+            id="action_product_sorting"/>
+
+        <menuitem
+            icon="STOCK_EXECUTE"
+            name="Sorting Accounting Settings to Products"
+            action="action_product_sorting"
+            id="menu_product_sorting"
+            parent="product.prod_config_main"
+            groups="base.group_extended"/>
+
+    </data>
+</openerp>
+ 

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+<!--
+                            ==================================
+                            Accountant Partner Configuration
+                            ==================================
+-->
+        <record id="view_partner_account_form" model="ir.ui.view">
+            <field name="name">res.partner.account.form</field>
+            <field name="model">res.partner.account</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Accounting Company Accounts">
+                    <field name="name"/>
+                    <field name="company_id" widget='selection' on_change='on_change_company(company_id)'/>
+                    <field name="type" invisible='True'/>
+                    <field name="user_type" widget='selection' />
+                    <field name="level" invisible='True'/>
+                    <field name="property_account_partner"/>
+                    <field name="property_account_partner_default"/>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="view_partner_account_tree" model="ir.ui.view">
+            <field name="name">res.partner.account.tree</field>
+            <field name="model">res.partner.account</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Company Accounting Classification">
+                    <field name="name"/>
+                    <field name="company_id"/>
+                    <field name="type" invisible='True'/>
+                    <field name="property_account_partner"/>
+                    <field name="property_account_partner_default"/>
+                </tree>
+            </field>
+        </record>
+
+<!--
+                            ==================================
+                                        View Partner
+                            ==================================
+-->
+        <record model="ir.ui.view" id="view_res_partner_form_inherit10nco">
+            <field name="name">res.partner.inherit10ncop</field>
+            <field name="model">res.partner</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+                <field name="property_account_receivable" position="replace">
+                    <field name="account_kind_rec"/>
+                    <field name="property_account_receivable" attrs="{'readonly':[('account_kind_rec','!=',False)], 'required':[('account_kind_rec','=',False)]}"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_res_partner_form_inherit10nco2">
+            <field name="name">res.partner.inherit10ncop2</field>
+            <field name="model">res.partner</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+                <field name="property_account_payable" position="replace">
+                    <field name="account_kind_pay"/>
+                    <field name="property_account_payable" attrs="{'readonly':[('account_kind_pay','!=',False)], 'required':[('account_kind_pay','=',False)]}"/>
+                </field>
+            </field>
+        </record>
+
+
+        <record id="action_partner_account_form_cxc" model="ir.actions.act_window">
+            <field name="name">Classification CxC Business Accounting</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner.account</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('type','=','receivable')]</field>
+            <!--TO DO ADD TIPS-->
+        </record>
+
+        <record id="action_partner_account_form_cxp" model="ir.actions.act_window">
+            <field name="name">Classification CxP Business Accounting</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner.account</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('type','=','payable')]</field>
+            <!--TO DO ADD TIPS-->
+        </record>
+
+
+        <menuitem 
+                    id="menu_contable_partner" 
+                    name="Company Accounting Classification" 
+                    parent="base.menu_base_config" sequence="1"/>
+
+        <menuitem 
+                    id="menu_partner_account_form_cxc" 
+                    parent="menu_contable_partner" 
+                    action="action_partner_account_form_cxc" />
+
+        <menuitem
+                    action="action_partner_account_form_cxp"
+                    id="menu_partner_account_form_cxp"
+                    parent="menu_contable_partner"/>
+
+    </data>
+</openerp>

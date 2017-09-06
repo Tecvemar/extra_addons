@@ -1,0 +1,9 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_res_partner_account","res.partner.account","model_res_partner_account","account.group_account_user",1,0,0,0
+"access_res_partner_account1","res.partner.account","model_res_partner_account","account.group_account_manager",1,1,1,1
+"access_account_records_user","account.account.records","model_account_account_records","account.group_account_user",1,0,0,0
+"access_account_records_manager","account.account.records","model_account_account_records","account.group_account_manager",1,1,1,1
+"access_res_partner_account2","res.partner.account","model_res_partner_account","base.group_partner_manager",1,0,0,0
+"access_account_product","account.product","model_account_product","account.group_account_user",1,0,0,0
+"access_account_product1","account.product","model_account_product","account.group_account_manager",1,1,1,1
+"access_account_product2","account.product","model_account_product","base.group_partner_manager",1,0,0,0

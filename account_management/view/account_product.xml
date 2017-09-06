@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="product_template_form_view" model="ir.ui.view">
+            <field name="name">product.template.product.form.account.product</field>
+            <field name="model">product.template</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="/notebook/page/group/separator[@string='Sales Properties']" position="before">
+                <group col="4" colspan="4">
+                    <separator string="Accounting Classification" colspan='4'/>
+                    <group col="6" colspan="4">
+                        <field name="acc_prod_id" colspan='2' attrs="{'readonly':[('unique_account','=',0)],'required':[('unique_account','=',1)]}"/>
+                        <field name="unique_account" colspan='2'/>
+                    </group>
+                </group>
+                </xpath>
+             </field>
+        </record>
+
+        <record id="product_normal_form_view" model="ir.ui.view">
+            <field name="name">product.normal.form.account.product</field>
+            <field name="model">product.product</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="notebook/page/group/separator[@string='Sales Properties']" position="before">
+                <group col="4" colspan="4">
+                    <separator string="Accounting Classification" colspan='4'/>
+                    <group col="6" colspan="4">
+                        <field name="acc_prod_id" colspan='2' attrs="{'readonly':[('unique_account','=',0)],'required':[('unique_account','=',1)]}"/>
+                        <field name="unique_account" colspan='2'/>
+                    </group>
+                </group>
+                </xpath>
+             </field>
+        </record>
+
+        <record id="ordenar_cuenta" model="ir.ui.view">
+            <field name="name">account.product.view</field>
+            <field name="model">account.product</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group col="4" colspan="1">
+                        <field colspan="1" name="name"/>
+                        <field colspan="1" name="company_id"/>
+                    </group>
+                    <notebook colspan="1">
+                        <page string="Income and Expenditure Accounts">
+                            <group col="1" colspan="1">
+                                <group col="2" colspan="1" string="Revenue account of the products">
+                                    <field colspan="2" name="unique_income"/>
+                                    <field colspan="2" name="u_type_income" attrs="{'readonly':[('unique_income','=',0)], 'required':[('unique_income','=',1)]}"/>
+                                    <field colspan="2" name="income" attrs="{'readonly':[('unique_income','=',0)], 'required':[('unique_income','=',1)]}"/>
+                                </group>
+                                <group col="2" colspan="1" string="Account In-Stock Products">
+                                    <field colspan="2" name="unique_stock"/>
+                                    <field colspan="2" name="u_type_stock_in" attrs="{'readonly':[('unique_stock','=',0)], 'required':[('unique_stock','=',1)]}"/>
+                                    <field colspan="2" name="stock_in" attrs="{'readonly':[('unique_stock','=',0)], 'required':[('unique_stock','=',1)]}"/>
+                                </group>
+                                <group col="2" colspan="1" string="Account Dif-Products Price">
+                                    <field colspan="2" name="unique_diff"/>
+                                    <field colspan="2" name="u_type_price_diff" attrs="{'readonly':[('unique_diff','=',0)], 'required':[('unique_diff','=',1)]}"/>
+                                    <field colspan="2" name="price_diff" attrs="{'readonly':[('unique_diff','=',0)], 'required':[('unique_diff','=',1)]}"/>
+                                </group>
+                            </group>
+                            <group col="1" colspan="1">
+                                <group col="2" colspan="1" string="Spending Account Products">
+                                    <field colspan="2" name="unique_expense"/>
+                                    <field colspan="2" name="u_type_expense" attrs="{'readonly':[('unique_expense','=',0)], 'required':[('unique_expense','=',1)]}"/>
+                                    <field colspan="2" name="expense" attrs="{'readonly':[('unique_expense','=',0)], 'required':[('unique_expense','=',1)]}"/>
+                                </group>
+                                <group col="2" colspan="1" string="Account Out-Product Inventory">
+                                    <field colspan="2" name="same_stock" attrs="{'readonly':[('unique_stock','=',0)], }"/>
+                                    <field colspan="2" name="u_type_stock_out" attrs="{'readonly':[('unique_stock','=',0)], 'required':[('unique_stock','=',1),('same_stock','=',0),]}"/>
+                                    <field colspan="2" name="stock_out" attrs="{'readonly':[('unique_stock','=',0)], 'required':[('unique_stock','=',1),('same_stock','=',0),]}"/>
+                                </group>
+                            </group>
+                            <group col="1" colspan="1">
+                                <group col="2" colspan="1" string="Account Sales Discounts">
+                                    <field colspan="2" name="unique_allowance"/>
+                                    <field colspan="2" name="u_type_allowance" attrs="{'readonly':[('unique_allowance','=',0)], 'required':[('unique_allowance','=',1)]}"/>
+                                    <field colspan="2" name="allowance" attrs="{'readonly':[('unique_allowance','=',0)], 'required':[('unique_allowance','=',1)]}"/>
+                                </group>
+                                <group col="2" colspan="1" string="Sales Returns Account">
+                                    <field colspan="2" name="unique_return"/>
+                                    <field colspan="2" name="u_type_return" attrs="{'readonly':[('unique_return','=',0)], 'required':[('unique_return','=',1)]}"/>
+                                    <field colspan="2" name="return" attrs="{'readonly':[('unique_return','=',0)], 'required':[('unique_return','=',1)]}"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="crear_ctas_tree">
+            <field name="name">account.product.tree</field>
+            <field name="model">account.product</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Create Product Accounts">
+                    <field name="name"/>
+                    <field name="company_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="crear_ctas_act">
+            <field name="name">Accounting Classification of Products</field>
+            <field name="res_model">account.product</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="view_category_property_accounting_form" model="ir.ui.view">
+            <field name="name">product.category.property.accounting.form</field>
+            <field name="model">product.category</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account_anglo_saxon.view_category_property_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/group/separator[@string=' Accounting Property']" position="before">
+                    <group col="2" colspan="2">
+                        <separator string="Accounting Classification" colspan="2"/>
+                            <field name="acc_prod_id" attrs="{'required':[('unique_account','=',1)]}"/>
+                            <field name="unique_account" colspan='2'/>
+                    </group>
+                    <group col="2" colspan="2">
+                        <separator string="Allowance And Sale Return Setting" colspan="2"/>
+                            <field name="property_account_allowance" domain="[('type','&lt;&gt;','view'),('type','&lt;&gt;','consolidation')]"/>
+                            <field name="property_account_return" domain="[('type','&lt;&gt;','view'),('type','&lt;&gt;','consolidation')]"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_prod_prod_cat_chng_view" model="ir.ui.view">
+            <field name="name">product.product.accounting.form</field>
+            <field name="model">product.product</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/notebook/page/group/field[@name='categ_id']" position="replace">
+                    <field name="categ_id" select="1" on_change="on_change_categ_id(categ_id)"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_prod_tmpl_cat_chng_view" model="ir.ui.view">
+            <field name="name">product.template.accounting.form</field>
+            <field name="model">product.template</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/notebook/page/group/field[@name='categ_id']" position="replace">
+                    <field name="categ_id" select="1" on_change="on_change_categ_id(categ_id)"/>
+                </xpath>
+            </field>
+        </record>
+
+<!--
+
+        <record id="product_template_form_view_allow" model="ir.ui.view">
+            <field name="name">product.template.product.allow.account.product</field>
+            <field name="model">product.template</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/notebook/page/group/field[@name='property_account_expense']" position="after">
+                    <field name="property_account_allowance" domain="[('type','&lt;&gt;','view'),('type','&lt;&gt;','consolidation')]" attrs="{'readonly':[('sale_ok','=',0)]}" />
+                    <field name="property_account_return" domain="[('type','&lt;&gt;','view'),('type','&lt;&gt;','consolidation')]" attrs="{'readonly':[('sale_ok','=',0)]}" />
+                </xpath>
+             </field>
+        </record>
+
+        <record id="product_normal_form_view_allow" model="ir.ui.view">
+            <field name="name">product.normal.form.allow.product</field>
+            <field name="model">product.product</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/notebook/page/group/field[@name='property_account_expense']" position="after">
+                    <group col="2" colspan="2">
+                        <field name="property_account_allowance" domain="[('type','&lt;&gt;','view'),('type','&lt;&gt;','consolidation')]" attrs="{'readonly':[('sale_ok','=',0)]}" />
+                        <field name="property_account_return" domain="[('type','&lt;&gt;','view'),('type','&lt;&gt;','consolidation')]" attrs="{'readonly':[('sale_ok','=',0)]}" />
+                    </group>
+                </xpath>
+             </field>
+        </record>
+-->
+
+    <menuitem parent="product.prod_config_main" id="menu_crear_ctas_act" action="crear_ctas_act"/>
+    
+    </data>
+</openerp>
