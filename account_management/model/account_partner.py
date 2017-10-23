@@ -150,7 +150,7 @@ class res_partner_account(osv.osv):
                         #~ ('account_uniq','unique(property_account_partner)', 'Otro registro ya esta usando esta Cuenta!'),
                         #~ ]
 
-    def _check(self, cr, uid, vals):
+    def _check(self, cr, uid, vals, context=None):
         cuentas=[vals.get('property_account_partner',False)]
         if not cuentas[0]:
             partner_acc_id = vals.get('id',False)
@@ -344,7 +344,7 @@ class res_partner(osv.osv):
         previous_accounts={}
         if context.get('previous_accounts',False):
             previous_accounts = context['previous_accounts']
-        
+
         per_obj = self.pool.get('account.period')
         period_ids = per_obj.search(cr, uid, [('special','=',False),
                                     ('state', '=', 'draft')],
@@ -361,12 +361,12 @@ class res_partner(osv.osv):
         ai_ids = period_ids and \
             ai_obj.search( cr, uid, search_criteria, context=context) \
             or False
-        search_criteria.pop()   
+        search_criteria.pop()
         avl_ids = period_ids and \
             avl_obj.search( cr, uid, search_criteria, context=context) \
-            or False 
+            or False
 
-        if aml_ids: 
+        if aml_ids:
             cr.execute('UPDATE account_move_line SET account_id = %s WHERE id in (%s)'%(vals[__ACC__[k][0]],', '.join([str(i) for i in aml_ids])))
 
         if ai_ids:
@@ -616,7 +616,7 @@ class res_partner(osv.osv):
 
         if type(ids)==int:
             ids = [ids]
-        
+
         if not set(vals.keys()) & set(['customer','supplier' ,'property_account_receivable', 'property_account_payable' ,'account_kind_rec', 'account_kind_pay']):
             return super(res_partner, self).write(cr, uid, ids, vals, context)
 
